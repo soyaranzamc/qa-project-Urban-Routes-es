@@ -16,12 +16,11 @@ La automatización cubre desde la selección de ruta y tarifa hasta la adición 
 
 Estructura del proyecto
 
-qa-project-Urban-Routes-es/
-│
-├── main.py : Contiene las pruebas automatizadas
-├── utils.py : Métodos y localizadores de elementos
-├── data.py : Datos constantes usados en las pruebas
-└── README.md : Este archivo
+⦁	qa-project-Urban-Routes-es/
+⦁	 main.py : Contiene las pruebas automatizadas
+⦁	 utils.py : Métodos y localizadores de elementos
+⦁	 data.py : Datos constantes usados en las pruebas
+⦁	 README.md : Este archivo
 
 
 Flujo cubierto por las pruebas
@@ -29,8 +28,8 @@ Flujo cubierto por las pruebas
 Las pruebas automatizadas ejecutan las siguientes acciones en orden:
 
 1. Establecer ruta: se rellenan los campos de origen y destino.
-2. Seleccionar tarifa Comfort**
-3. Ingresar número de teléfono**
+2. Seleccionar tarifa Comfort
+3. Ingresar número de teléfono
 4. Obtener y enviar código de confirmación: interceptado automáticamente desde los logs.
 5. Agregar tarjeta de crédito: se completa el número y CVV, forzando el desenfoque para activar el botón "Agregar".
 6. Escribir mensaje al conductor
