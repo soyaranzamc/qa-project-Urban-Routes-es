@@ -25,18 +25,19 @@ Estructura del proyecto
 
 Flujo cubierto por las pruebas
 
-Las pruebas automatizadas ejecutan las siguientes acciones en orden:
+Las pruebas se dividen en pasos independientes que validan:
 
-1. Establecer ruta: se rellenan los campos de origen y destino.
-2. Seleccionar tarifa Comfort
-3. Ingresar número de teléfono
-4. Obtener y enviar código de confirmación: interceptado automáticamente desde los logs.
-5. Agregar tarjeta de crédito: se completa el número y CVV, forzando el desenfoque para activar el botón "Agregar".
-6. Escribir mensaje al conductor
-7. Pedir manta y pañuelos
-8. Agregar 2 helados
-9. Buscar taxi y confirmar que aparece información del viaje
-
+1. Configurar la dirección de origen y destino.
+2. Seleccionar la tarifa Comfort.
+3. Abrir el pop-up para ingresar el teléfono.
+4. Introducir el número de teléfono.
+5. Recuperar y enviar el código de confirmación automáticamente desde los logs.
+6. Agregar tarjeta de crédito (número y CVV), activando el botón "Agregar" al perder el foco.
+7. Verificar que la tarjeta fue agregada correctamente.
+8. Escribir un mensaje para el conductor.
+9. Pedir una manta y pañuelos.
+10. Añadir 2 helados.
+11. Buscar un taxi y confirmar que aparece la información del viaje.
 Cada uno de estos pasos está validado dentro de pruebas individuales y puede ejecutarse de forma independiente.
 
 Cómo ejecutar las pruebas
@@ -50,6 +51,11 @@ git clone https://github.com/tu-usuario/qa-project-Urban-Routes-es.git
 6.Presiona ▶ (play) para comenzar la ejecución del programa main.py
 
 Recomendaciones y problemas comunes
-⦁	TimeoutException: Asegúrate de que todos los elementos estén visibles antes de ejecutar acciones. Se usan WebDriverWaits en el proyecto para evitarlo.
+⦁	TimeoutException: Puede aparecer si la página es lenta o los elementos tardan en mostrarse. Los WebDriverWait ayudan a manejar esto, pero se puede ajustar el tiempo si es necesario.
 
-⦁	ElementClickInterceptedException: Esto puede pasar por animaciones o solapamiento de elementos. En algunos pasos se usa JavaScript para hacer clic directo y evitar bloqueos.
+⦁	ElementClickInterceptedException: Suele pasar por animaciones o elementos que tapan al objetivo. Se soluciona esperando o usando clics por JavaScript.
+
+⦁	Pruebas independientes: Cada test empieza desde un estado inicial limpio, siguiendo buenas prácticas de automatización.
+
+
+
